@@ -8,6 +8,8 @@
     <meta name="robots" content="index,follow"> 
     <script type="text/javascript" src="js/main.js"></script>  
     <script type="text/javascript">
+        var num=new Array();
+        var ac=0;
         window.onload=function(){
             // 获取全部的图书商品
             var oDrag=document.getElementsByName("piclist");
@@ -24,7 +26,18 @@
             oCart.addEventListener("drop",function(e){
                 var oDtf=e.dataTransfer;
                 var sHtml=oDtf.getData("text/html");
+                var flag=false;
+                for(var iCv=0;iCv<num.length;iCv++)
+                {
+                if(sHtml==num[iCv])
+                flag=true;
+                }
+                if(flag==false)
+                {
                 oCart.innerHTML+=sHtml;
+                num[ac]=sHtml;
+                ac++;
+                }
                 e.preventDefault();
                 e.stopPropagation();
             },false);
