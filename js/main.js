@@ -1,5 +1,10 @@
 var iiAdvlInitTop=0;
 var iiCloselInitTop=0;
+var img=new Array()
+img[0]="images/b-ad1.jpg";
+img[1]="images/b-ad2.jpg";
+img[2]="images/b-ad3.jpg";
+img[3]="images/b-ad4.jpg";
 window.onload=function(){
     var oDt=new Date();
     var sWd="";
@@ -25,28 +30,36 @@ window.onload=function(){
     var iTimerid=window.setInterval("showtime()",1000);
     if(document.getElementById("a1")!=null){
       document.getElementById("a1").onmouseover=function(){
-        document.getElementById("badimg").src="images/b-ad1.jpg";
+        document.getElementById("badimg").src=img[0];
       }
     }
     if(document.getElementById("a2")!=null){
       document.getElementById("a2").onmouseover=function(){
-        document.getElementById("badimg").src="images/b-ad2.jpg";
+        document.getElementById("badimg").src=img[1];
       }
     }
     if(document.getElementById("a3")!=null){
       document.getElementById("a3").onmouseover=function(){
-        document.getElementById("badimg").src="images/b-ad3.jpg";
+        document.getElementById("badimg").src=img[2];
       }
     }
     if(document.getElementById("a4")!=null){
       document.getElementById("a4").onmouseover=function(){
-        document.getElementById("badimg").src="images/b-ad4.jpg";
+        document.getElementById("badimg").src=img[3];
       }
     }
+    setInterval(function(){changeimg()},5000);
     window.onscroll=function(){admove();}
     if(document.getElementById("advl")!=null){advinit();}
     if(document.getElementById("closel")!=null){document.getElementById("closel").onclick=function(){advclosel();}}
     if(document.getElementById("closer")!=null){document.getElementById("closer").onclick=function(){advcloser();}}
+    }
+    var num=0;
+    function changeimg(){
+      document.getElementById("badimg").src=img[num];
+      num++;
+      if(num>=3)
+        num=0;
     }
     function showtime(){
     var oDt=new Date();
