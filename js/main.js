@@ -145,3 +145,10 @@ window.onload=function(){
           document.getElementById("closer").style.top=sTop2;
         }
       }
+  function buttonclick(){
+    var value=document.getElementById("value").value;
+    var content=document.getElementById("content");
+    var contents = content.innerHTML;
+    var values = contents.split(value);
+    content.innerHTML = values.join('<span style="background:red;">' + value + '</span>');
+  }

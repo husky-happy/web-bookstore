@@ -10,7 +10,7 @@
     <title>叮叮书店</title>
     <link rel="stylesheet" href="style.css" type="text/css">
 </head>
-<body>
+<body id="content">
     <div id="advl"><a href="#"><img src="images/adv1.gif" alt="广告"></a></div>
     <div id="closel"><img src="images/close1.jpg" alt="关闭"></div>
     <div id="advr"><a href="#"><img src="images/adv1.gif" alt="广告"></a></div>
@@ -24,8 +24,8 @@
             </div>
             <div id="search">
                 <form action="index.html" method="GET">
-                    <input type="search" placeholder="站内搜索">
-                    <input type="submit" value="搜索">
+                    <input type="search" placeholder="站内搜索(仅支持中文)" id="value">
+                    <input type="submit" value="搜索" onclick="buttonclick();">
                 </form>
             </div>
         </header>
@@ -84,7 +84,7 @@
                             <mark> HTML5</mark>
                             无疑将成为移动互联网领域的主宰者。本书是系统学习网页设计和移动设计的参考图书。
                         </p>
-                        <p>
+                        <p id="v1">
                             Adam Freeman，曾在多家名企担任高级职务，现为畅销技术图书作家，著有多部C#、.
                             NET和Java方面的大部头作品。其中《ASP.NET 4高级程序设计（第4版）》、
                             《精通ASP.NET MVC 3框架（第3版）》销量均在同品种中名列前茅，备受读者推崇。
