@@ -139,7 +139,7 @@ width: 88%;margin-bottom: 25px;padding: 10px 10px 10px 18px;opacity: 0;z-index: 
     counter-increment: listxh;display: inline-block;
     width: 100%;vertical-align: bottom;
     overflow: hidden;white-space: nowrap;
-    margin-top: 8px;
+    margin-top: 8px; 
     transition: text-shadow 1s linear;
     border-bottom: #ccc dashed 1px;
 

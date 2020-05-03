@@ -1,4 +1,3 @@
-window.onload=function(){
     //让姓名文本框获得焦点
     document.getElementById("name").focus();
     if(document.getElementById("contact")!=null){
@@ -34,4 +33,3 @@ window.onload=function(){
             /*return true; //提交表单*/ 
         }
     }
-}

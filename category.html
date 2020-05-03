@@ -7,59 +7,6 @@
     <meta name="description" content="叮叮书店是一个销售书籍的网上书店">
     <meta name="robots" content="index,follow"> 
     <script type="text/javascript" src="js/main.js"></script>  
-    <script type="text/javascript">
-        var num=new Array();
-        var ac=0;
-        window.onload=function(){
-            // 获取全部的图书商品
-            var oDrag=document.getElementsByName("piclist");
-            //遍历每一个图书商品
-            for(var iCv=0;iCv<oDrag.length;iCv++){
-                // 为每一个图书商品添加被拖放元素的dragstart事件行为
-                oDrag[iCv].addEventListener("dragstart",function(e){
-                    var oDtf=e.dataTransfer;
-                    oDtf.setData("text/html",addCart(this.title,this.alt,1));
-                },false);
-            }
-            var oCart=document.getElementById("ulcart");
-            // 添加目标元素的drop事件行为
-            oCart.addEventListener("drop",function(e){
-                var oDtf=e.dataTransfer;
-                var sHtml=oDtf.getData("text/html");
-                var flag=false;
-                for(var iCv=0;iCv<num.length;iCv++)
-                {
-                if(sHtml==num[iCv])
-                flag=true;
-                }
-                if(flag==false)
-                {
-                oCart.innerHTML+=sHtml;
-                num[ac]=sHtml;
-                ac++;
-                }
-                e.preventDefault();
-                e.stopPropagation();
-            },false);
-            // 添加页面的dragover事件行为
-            document.ondragover=function(e){
-                e.preventDefault();
-            }
-            document.ondrop=function(e){
-                e.preventDefault();
-            }
-        }
-        // 自定义向购物车中添加记录的函数
-        function addCart(a,b,c){
-            var sHtml="<li class='lic'>";
-            sHtml+="<span>"+a+"</span>";
-            sHtml+="<span>"+b+"</span>";
-            sHtml+="<span>"+c+"</span>";
-            sHtml+="<span>"+b*c+"</span>";
-            sHtml+="</li>"
-            return sHtml;
-        }
-    </script> 
     <title>书籍分类</title>
     <link rel="stylesheet" href="style.css" type="text/css">
 </head>
@@ -239,4 +186,55 @@
         通讯地址：清华大学学研大厦A座 读者服务部  电话：（010）62781733  网管信箱：netadmin@tup.tsinghua.edu.cn
     </section>
 </body>
+<script type="text/javascript">
+    var num=new Array();
+    var ac=0;
+        // 获取全部的图书商品
+        var oDrag=document.getElementsByName("piclist");
+        //遍历每一个图书商品
+        for(var iCv=0;iCv<oDrag.length;iCv++){
+            // 为每一个图书商品添加被拖放元素的dragstart事件行为
+            oDrag[iCv].addEventListener("dragstart",function(e){
+                var oDtf=e.dataTransfer;
+                oDtf.setData("text/html",addCart(this.title,this.alt,1));
+            },false);
+        }
+        var oCart=document.getElementById("ulcart");
+        // 添加目标元素的drop事件行为
+        oCart.addEventListener("drop",function(e){
+            var oDtf=e.dataTransfer;
+            var sHtml=oDtf.getData("text/html");
+            var flag=false;
+            for(var iCv=0;iCv<num.length;iCv++)
+            {
+            if(sHtml==num[iCv])
+            flag=true;
+            }
+            if(flag==false)
+            {
+            oCart.innerHTML+=sHtml;
+            num[ac]=sHtml;
+            ac++;
+            }
+            e.preventDefault();
+            e.stopPropagation();
+        },false);
+        // 添加页面的dragover事件行为
+        document.ondragover=function(e){
+            e.preventDefault();
+        }
+        document.ondrop=function(e){
+            e.preventDefault();
+        }
+    // 自定义向购物车中添加记录的函数
+    function addCart(a,b,c){
+        var sHtml="<li class='lic'>";
+        sHtml+="<span>"+a+"</span>";
+        sHtml+="<span>"+b+"</span>";
+        sHtml+="<span>"+c+"</span>";
+        sHtml+="<span>"+b*c+"</span>";
+        sHtml+="</li>"
+        return sHtml;
+    }
+</script> 
 </html>
