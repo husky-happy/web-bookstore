@@ -31,21 +31,25 @@ window.onload=function(){
     if(document.getElementById("a1")!=null){
       document.getElementById("a1").onmouseover=function(){
         document.getElementById("badimg").src=img[0];
+        num=0;
       }
     }
     if(document.getElementById("a2")!=null){
       document.getElementById("a2").onmouseover=function(){
         document.getElementById("badimg").src=img[1];
+        num=1
       }
     }
     if(document.getElementById("a3")!=null){
       document.getElementById("a3").onmouseover=function(){
         document.getElementById("badimg").src=img[2];
+        num=2
       }
     }
     if(document.getElementById("a4")!=null){
       document.getElementById("a4").onmouseover=function(){
         document.getElementById("badimg").src=img[3];
+        num=3;
       }
     }
     setInterval(function(){changeimg()},5000);
@@ -58,7 +62,7 @@ window.onload=function(){
     function changeimg(){
       document.getElementById("badimg").src=img[num];
       num++;
-      if(num>=3)
+      if(num>=4)
         num=0;
     }
     function showtime(){
